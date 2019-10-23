@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>mri_scanner - loris_db Database</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="../schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="../bower/html5shiv/html5shiv.min.js"></script>
+        <script src="../bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="../index.html" class="navbar-brand"><b>loris_db</b> Database</a>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="../routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>mri_scanner</h1><p><span id="recordNumber">10</span> rows</p><br />
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                            <h3 id="Columns" class="box-title">Columns</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table id="standard_table" class="table table-bordered table-striped dataTable" role="grid">
+                                <thead align='left'>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>Type</th>
+                                    <th>Size</th>
+                                    <th title='Are nulls allowed?'>Nulls</th>
+                                    <th title='Is column automatically updated?'>Auto</th>
+                                    <th title='Default value'>Default</th>
+                                    <th title='Columns in tables that reference this column'>Children</th>
+                                    <th title='Columns in tables that are referenced by this column'>Parents</th>
+                                    <th title='Comments' class="toggle"><span>Comments</span></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="ID">ID</span></td>
+                                    <td>INT UNSIGNED</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title='Automatically updated by the database'>√</td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="files.ScannerID references mri_scanner.ID via FK_files_scannerID"><a href='files.html'>files</a><span class='relatedKey'>.ScannerID</span></td>
+                                                <td class="constraint detail">FK_files_scannerID<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="mri_protocol.ScannerID references mri_scanner.ID via FK_mri_protocol_1"><a href='mri_protocol.html'>mri_protocol</a><span class='relatedKey'>.ScannerID</span></td>
+                                                <td class="constraint detail">FK_mri_protocol_1<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="Manufacturer">Manufacturer</span></td>
+                                    <td>VARCHAR</td>
+                                    <td>255</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="Model">Model</span></td>
+                                    <td>VARCHAR</td>
+                                    <td>255</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="Serial_number">Serial_number</span></td>
+                                    <td>VARCHAR</td>
+                                    <td>255</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="Software">Software</span></td>
+                                    <td>VARCHAR</td>
+                                    <td>255</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="CandID">CandID</span></td>
+                                    <td>INT</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="mri_scanner.CandID references candidate.CandID via FK_mri_scanner_1"><a href='candidate.html'>candidate</a><span class='relatedKey'>.CandID</span></td>
+                                                <td class="constraint detail">FK_mri_scanner_1<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-sitemap"></i>
+                            <h3 id="Indexes" class="box-title">Indexes</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table id="indexes_table" class="table table-bordered table-striped dataTable" role="grid">
+                                <thead>
+                                <tr>
+                                    <th>Constraint Name</th>
+                                    <th>Type</th>
+                                    <th>Sort</th>
+                                    <th>Column(s)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> PRIMARY</td>
+                                    <td>Primary key</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>ID</td>
+                                </tr>
+                                <tr>
+                                    <td title='Indexed'>FK_mri_scanner_1</td>
+                                    <td>Performance</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>CandID</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div><!-- /.box-body -->
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 id="Relationships" class="box-title">Relationships</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom"><!-- Tabs within a box -->
+                                <h5>Close relationships within degrees of separation</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>
+                                    <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>
+                                    <li class=""><a href="#oneimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">One implied</a></li>
+                                    <li class=""><a href="#twoimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two implied</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="files.html" target="_top" title="files" alt="" coords="651,5,895,416">
+<area shape="rect" id="node2" href="mri_scanner.html" target="_top" title="mri_scanner" alt="" coords="300,379,593,624">
+<area shape="rect" id="node4" href="candidate.html" target="_top" title="candidate" alt="" coords="5,499,256,821">
+<area shape="rect" id="node3" href="mri_protocol.html" target="_top" title="mri_protocol" alt="" coords="637,433,909,580">
+</map>
+                                        <a name='diagram'><img id="oneDegreeImg" src="../diagrams/tables/mri_scanner.1degree.png" usemap="#oneDegreeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" href="candidate.html" target="_top" title="candidate" alt="" coords="236,413,487,736">
+<area shape="rect" id="node2" href="psc.html" target="_top" title="psc" alt="" coords="39,125,159,213">
+<area shape="rect" id="node3" href="caveat_options.html" target="_top" title="caveat_options" alt="" coords="5,621,192,709">
+<area shape="rect" id="node4" href="candidate_consent_rel.html" target="_top" title="candidate_consent_rel" alt="" coords="562,1008,801,1096">
+<area shape="rect" id="node5" href="CNV.html" target="_top" title="CNV" alt="" coords="621,235,741,323">
+<area shape="rect" id="node6" href="feedback_mri_comments.html" target="_top" title="feedback_mri_comments" alt="" coords="1529,5,1785,93">
+<area shape="rect" id="node7" href="files.html" target="_top" title="files" alt="" coords="1227,108,1471,519">
+<area shape="rect" id="node8" href="session.html" target="_top" title="session" alt="" coords="603,57,759,145">
+<area shape="rect" id="node9" href="mri_scan_type.html" target="_top" title="mri_scan_type" alt="" coords="931,115,1114,203">
+<area shape="rect" id="node10" href="ImagingFileTypes.html" target="_top" title="ImagingFileTypes" alt="" coords="579,551,783,639">
+<area shape="rect" id="node11" href="mri_processing_protocol.html" target="_top" title="mri_processing_protocol" alt="" coords="894,467,1151,555">
+<area shape="rect" id="node12" href="mri_scanner.html" target="_top" title="mri_scanner" alt="" coords="876,572,1169,817">
+<area shape="rect" id="node13" href="tarchive.html" target="_top" title="tarchive" alt="" coords="949,220,1097,308">
+<area shape="rect" id="node14" href="files_intermediary.html" target="_top" title="files_intermediary" alt="" coords="1555,111,1760,199">
+<area shape="rect" id="node15" href="files_qcstatus.html" target="_top" title="files_qcstatus" alt="" coords="1569,216,1746,304">
+<area shape="rect" id="node16" href="genomic_candidate_files_rel.html" target="_top" title="genomic_candidate_files_rel" alt="" coords="541,340,821,428">
+<area shape="rect" id="node17" href="genomic_sample_candidate_rel.html" target="_top" title="genomic_sample_candidate_rel" alt="" coords="531,445,832,533">
+<area shape="rect" id="node18" href="issues.html" target="_top" title="issues" alt="" coords="957,325,1089,413">
+<area shape="rect" id="node19" href="mri_protocol.html" target="_top" title="mri_protocol" alt="" coords="1213,545,1485,692">
+<area shape="rect" id="node20" href="parameter_candidate.html" target="_top" title="parameter_candidate" alt="" coords="567,656,795,744">
+<area shape="rect" id="node21" href="parameter_file.html" target="_top" title="parameter_file" alt="" coords="1567,321,1748,409">
+<area shape="rect" id="node22" href="participant_status.html" target="_top" title="participant_status" alt="" coords="578,797,785,885">
+<area shape="rect" id="node23" href="SNP_candidate_rel.html" target="_top" title="SNP_candidate_rel" alt="" coords="575,903,788,991">
+</map>
+                                        <a name='diagram'><img id="twodegreesDegreeImg" src="../diagrams/tables/mri_scanner.2degrees.png" usemap="#twoDegreesRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="oneimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagramImplied" name="oneDegreeRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="files.html" target="_top" title="files" alt="" coords="651,5,895,416">
+<area shape="rect" id="node2" href="mri_scanner.html" target="_top" title="mri_scanner" alt="" coords="300,379,593,624">
+<area shape="rect" id="node4" href="candidate.html" target="_top" title="candidate" alt="" coords="5,499,256,821">
+<area shape="rect" id="node3" href="mri_protocol.html" target="_top" title="mri_protocol" alt="" coords="637,433,909,580">
+</map>
+                                        <a name='diagram'><img id="oneimpliedDegreeImg" src="../diagrams/tables/mri_scanner.implied1degrees.png" usemap="#oneDegreeRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twoimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagramImplied" name="twoDegreesRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="candidate.html" target="_top" title="candidate" alt="" coords="236,1033,487,1356">
+<area shape="rect" id="node2" href="psc.html" target="_top" title="psc" alt="" coords="39,483,159,571">
+<area shape="rect" id="node3" href="caveat_options.html" target="_top" title="caveat_options" alt="" coords="5,1264,192,1352">
+<area shape="rect" id="node4" href="Project.html" target="_top" title="Project" alt="" coords="33,1159,165,1247">
+<area shape="rect" id="node5" href="candidate_consent_rel.html" target="_top" title="candidate_consent_rel" alt="" coords="562,1648,801,1736">
+<area shape="rect" id="node6" href="CNV.html" target="_top" title="CNV" alt="" coords="621,556,741,644">
+<area shape="rect" id="node7" href="family.html" target="_top" title="family" alt="" coords="620,697,743,785">
+<area shape="rect" id="node8" href="feedback_bvl_thread.html" target="_top" title="feedback_bvl_thread" alt="" coords="569,803,794,891">
+<area shape="rect" id="node9" href="feedback_mri_comments.html" target="_top" title="feedback_mri_comments" alt="" coords="1540,409,1796,497">
+<area shape="rect" id="node10" href="files.html" target="_top" title="files" alt="" coords="1233,55,1477,465">
+<area shape="rect" id="node11" href="session.html" target="_top" title="session" alt="" coords="603,415,759,503">
+<area shape="rect" id="node12" href="mri_scan_type.html" target="_top" title="mri_scan_type" alt="" coords="931,160,1114,248">
+<area shape="rect" id="node13" href="ImagingFileTypes.html" target="_top" title="ImagingFileTypes" alt="" coords="579,264,783,352">
+<area shape="rect" id="node14" href="mri_processing_protocol.html" target="_top" title="mri_processing_protocol" alt="" coords="894,301,1151,389">
+<area shape="rect" id="node15" href="mri_scanner.html" target="_top" title="mri_scanner" alt="" coords="876,1349,1169,1595">
+<area shape="rect" id="node16" href="tarchive.html" target="_top" title="tarchive" alt="" coords="949,519,1097,607">
+<area shape="rect" id="node17" href="files_intermediary.html" target="_top" title="files_intermediary" alt="" coords="1565,5,1771,93">
+<area shape="rect" id="node18" href="files_qcstatus.html" target="_top" title="files_qcstatus" alt="" coords="1579,111,1757,199">
+<area shape="rect" id="node19" href="genomic_candidate_files_rel.html" target="_top" title="genomic_candidate_files_rel" alt="" coords="541,908,821,996">
+<area shape="rect" id="node20" href="genomic_sample_candidate_rel.html" target="_top" title="genomic_sample_candidate_rel" alt="" coords="531,1013,832,1101">
+<area shape="rect" id="node21" href="issues.html" target="_top" title="issues" alt="" coords="957,624,1089,712">
+<area shape="rect" id="node22" href="mri_protocol.html" target="_top" title="mri_protocol" alt="" coords="1219,1323,1491,1469">
+<area shape="rect" id="node23" href="mri_protocol_violated_scans.html" target="_top" title="mri_protocol_violated_scans" alt="" coords="1213,868,1496,956">
+<area shape="rect" id="node24" href="mri_violations_log.html" target="_top" title="mri_violations_log" alt="" coords="1250,1531,1459,1619">
+<area shape="rect" id="node25" href="parameter_candidate.html" target="_top" title="parameter_candidate" alt="" coords="567,1119,795,1207">
+<area shape="rect" id="node26" href="parameter_file.html" target="_top" title="parameter_file" alt="" coords="1577,216,1759,304">
+<area shape="rect" id="node27" href="participant_status.html" target="_top" title="participant_status" alt="" coords="578,1224,785,1312">
+<area shape="rect" id="node28" href="participant_status_history.html" target="_top" title="participant_status_history" alt="" coords="549,1329,813,1417">
+<area shape="rect" id="node29" href="SNP_candidate_rel.html" target="_top" title="SNP_candidate_rel" alt="" coords="575,1507,788,1595">
+</map>
+                                        <a name='diagram'><img id="twoimpliedDegreeImg" src="../diagrams/tables/mri_scanner.implied2degrees.png" usemap="#twoDegreesRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <script>
+                    var config = {
+                        pagination: true
+                    }
+                </script>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.1.0</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="../bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="../bower/pdfmake/pdfmake.min.js"></script>
+        <script src="../bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="../bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="../bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="../bower/codemirror/codemirror.js"></script>
+        <script src="../bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="table.js"></script>
+        <script src="../schemaSpy.js"></script>
+    </body>
+</html>
